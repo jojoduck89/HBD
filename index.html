@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Page</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            text-align: center;
+        }
+        input[type="text"], input[type="date"] {
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="nickname">Nickname:</label>
+        <input type="text" id="nickname" name="nickname" required><br>
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const nickname = document.getElementById('nickname').value;
+            const dob = document.getElementById('dob').value;
+            window.location.href = `result.html?name=${encodeURIComponent(name)}&nickname=${encodeURIComponent(nickname)}&dob=${encodeURIComponent(dob)}`;
+        });
+    </script>
+</body>
+</html>

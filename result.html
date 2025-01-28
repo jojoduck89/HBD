@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Page</title>
+  
+   
+</head>
+<body>
+    <div style="text-align: center;">
+         <p style="font-size: 150px;">HAPPY <br>BIRHTDAY</p>   
+
+      <p style="font-size: 50px;">
+      <span id="nickname"></span>
+      <br>
+      <span id="name"></span>
+      <br>
+      <span id="dob"></span></p>
+   </div>
+
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        document.getElementById('name').textContent = params.get('name');
+        document.getElementById('nickname').textContent = params.get('nickname');
+        document.getElementById('dob').textContent = params.get('dob');
+    </script>
+</body>
+</html>
